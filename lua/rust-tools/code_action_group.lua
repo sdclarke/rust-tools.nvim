@@ -3,7 +3,7 @@ local M = {}
 ---@private
 function M.apply_action(action, client, ctx)
   if action.edit then
-    vim.lsp.util.apply_workspace_edit(action.edit)
+    vim.lsp.util.apply_workspace_edit(action.edit, "utf-8")
   end
   if action.command then
     local command = type(action.command) == "table" and action.command or action
